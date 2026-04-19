@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Portofolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head> 
+  <body>
+    <!-- Navigation Bar -->
+    <div class="noise"></div>
+
+    <nav id="main-nav">
+        <div class="container nav-inner">
+            <a href="#" class="logo">Nya</a>
+            <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#portfolio" class="nav-link">Portfolio</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="Abu Klasik Profesional CV Admin Sosial Media Resume.pdf" class="nav-link" download>Resume</a>
+        </div>
+        <div style="display: flex; gap: 1.5rem; align-items: center;">
+            <div id="theme-toggle" class="theme-toggle">
+            <i class="fa-solid fa-cat"></i>
+            </div>
+            <div class="mobile-menu-btn"><i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- Tampilan Hp -->
+
+    <div class="mobile-nav-overlay" id="mobile-nav-overlay"></div>
+    <div class="mobile-nav-links" id="mobile-nav-links">
+        <div class="mobile-nav-header">
+            <div class="mobile-nav-close" id="mobile-nav-close">
+            <i class="fa-solid fa-times"></i>
+            </div>
+        </div>
+    <a href="#home" class="mobile-nav-link">Home</a>
+    <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+    <a href="#skills" class="mobile-nav-link">Skills</a>
+    <a href="#contact" class="mobile-nav-link">Contact</a>
+    <a href="Abu Klasik Profesional CV Admin Sosial Media Resume.pdf" class="mobile-nav-link" download>Resume</a>
+    </div>
+    <!-- Navigation Bar Selesai -->
+
+    <!-- Content 1 -->
+    <section class="hero" id="home">
+        <div class="hero-glow"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text-warp" id="hero text">
+                    <div class="hero-badge" id="hero-badge">
+                        My Name Is
+                    </div>
+                    <h1 class="hero-title" id="hero-title">
+                        Rahmannia <span style="color:var(--primary);">Dwi</span> Prihastuti
+                    </h1>
+                    <p class="hero-desc" id="hero-desc">
+                        Mahasiswi Teknologi Rekayasa Konstruksi Bangunan Air ITS.
+                        Berfokus pada perencanaan infrastruktur keairan dan pemodelan bangunan air.
+                    </p>
+                    <div class="btn-group" id="hero-buttons">
+                        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                        <a href="#contact" class="btn">Contact Me</a>
+                    </div>
+                </div>
+
+                <!--Hero Image-->
+                <div class="hero-img-wrap" id="hero-image">
+                    <div class="hero-img-container">
+                        <div class="hero-img-card hero-img-main">
+                            <img src="new.JPG" alt="developer image">
+                        </div>
+                        <div class="hero-img-card hero-img-layer1"></div>
+                        <div class="hero-img-card hero-img-layer2"></div>
+                        <div class="hero-img-card hero-img-frame"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section" id="portfolio">
+    <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-water"></i> Selected Projects</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="project1.jpg" alt="Flood Control" onclick="openFullImg(this.src)"> 
+                    <div class="img-overlay">Click to Enlarge</div>
+                </div>
+                <div class="project-info">
+                    <h3>DAS Grindulu Flood Control</h3>
+                    <p>Pemodelan hidrolika 2D menggunakan HEC-RAS untuk mitigasi banjir di Pacitan.</p>
+                    <div class="tag-group">
+                        <span class="tag">HEC-RAS</span>
+                        <span class="tag">ArcGIS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-img">
+                    <img src="project2.jpg" alt="Sheet Pile" onclick="openFullImg(this.src)">
+                    <div class="img-overlay">Click to Enlarge</div>
+                </div>
+                <div class="project-info">
+                    <h3>CCSP Construction</h3>
+                    <p>Pengawasan teknis pemasangan Corrugated Concrete Sheet Pile di proyek Semarang.</p>
+                    <div class="tag-group">
+                        <span class="tag">Civil Engineering</span>
+                        <span class="tag">Field Supervision</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div id="imgModal" class="modal" onclick="this.style.display='none'">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="fullImg">
+</div>
+
+<section class="section" id="skills">
+    <div class="container">
+        <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-droplet"></i></div>
+                <h4>Water Engineering</h4>
+                <p>Hydraulic modeling & Flood mapping</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
+                <h4>Engineering Tools</h4>
+                <p>AutoCAD, HEC-RAS, ArcGIS, Global Mapper</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h4>Web Dev</h4>
+                <p>HTML, CSS (Aesthetic Portfolio)</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="contact">
+    <div class="contact-ornament-1"></div>
+    <div class="contact-ornament-2"></div>
+    <div class="container">
+        <div class="contact-wrapper">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="contact-subtitle">Tertarik untuk berdiskusi tentang konstruksi keairan atau sekadar menyapa?</p>
+            <div class="social-links-grid">
+                <a href="mailto:emailmu@example.com" class="social-box">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://linkedin.com/in/rahma" class="social-box">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://instagram.com/rahma" class="social-box">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode'); // Cara alternatif yang lebih rapi
+    
+    if (body.getAttribute('data-theme') === 'light') {
+        body.removeAttribute('data-theme');
+    } else {
+        body.setAttribute('data-theme', 'light');
+    }
+    
+    // Animasi putar dikit saat diklik
+    themeToggle.style.transform = 'scale(1.2) rotate(15deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'scale(1) rotate(0deg)';
+    }, 200);
+});
+const menuBtn = document.querySelector('.mobile-menu-btn');
+const mobileLinks = document.querySelector('.mobile-nav-links');
+const closeBtn = document.querySelector('.mobile-nav-close');
+const overlay = document.querySelector('.mobile-nav-overlay');
+
+// Buka Menu
+menuBtn.addEventListener('click', () => {
+    mobileLinks.classList.add('active');
+    overlay.classList.add('active');
+});
+
+// Tutup Menu
+const closeMenu = () => {
+    mobileLinks.classList.remove('active');
+    overlay.classList.remove('active');
+};
+
+closeBtn.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+// Tutup menu kalau link-nya diklik
+document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
+</script>
+  </body> 
+</html>
