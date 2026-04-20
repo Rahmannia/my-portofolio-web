@@ -2,8 +2,8 @@
     --bg: #0a0f18;
     --surface: #121926;
     --surface-2: #1c2538;
-    --primary: #00f2ff;
-    --primary-glow: rgba(0, 242, 255, 0.4);
+    --primary: #00d1d1;
+    --primary-glow: rgba(0, 209, 209, 0.3);
     --text: #ffffff;
     --text-muted: #a0aec0;
     --border: rgba(255, 255, 255, 0.08);
@@ -561,14 +561,72 @@ html {
 .project-img:hover img { transform: scale(1.1); }
 
 /* Modal Zoom Gambar */
-.modal {
-    display: none; position: fixed; z-index: 1000;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9); padding-top: 50px;
+/* Styling Modal Zoom */
+.modal-zoom {
+    display: none; /* Awalnya sembunyi */
+    position: fixed;
+    z-index: 999999; /* Angka sembilannya banyakin biar di paling depan */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
 }
-.modal-content {
-    margin: auto; display: block; width: 80%; max-width: 800px;
-    border-radius: 10px; border: 2px solid var(--primary);
+
+.modal-zoom-content {
+    /* Ubah max-width dari 90% ke 95% atau biarkan auto */
+    width: auto; 
+    max-width: 95%; 
+    
+    /* Ubah max-height supaya lebih tinggi (misal dari 80% ke 90%) */
+    max-height: 90vh; 
+    
+    border-radius: 5px;
+    border: 2px solid var(--primary);
+    box-shadow: 0 0 30px var(--primary-glow);
+    
+    /* Tambahan agar gambar tidak pecah saat diperbesar */
+    object-fit: contain; 
+
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-zoom {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- Perbaikan agar Video Tidak Gepeng --- */
+.project-img video {
+    width: 100%;
+    /* JANGAN pakai tinggi tetap (misal 200px) */
+    height: auto; 
+    
+    /* Ini kuncinya: Video akan muat di dalam kotak tanpa distorsi */
+    object-fit: contain; 
+    
+    /* Tambahkan background hitam di area kosong (jika ada) */
+    background-color: #000; 
+    
+    display: block;
+    transition: 0.3s;
+}
+
+/* Biar efek hover-nya tetep keren */
+.project-card:hover video {
+    transform: scale(1.02); /* Zoom dikit aja biar gak potong */
 }
 
 /* --- Skills Modern Card --- */
@@ -640,6 +698,164 @@ html {
     transition: all 0.5s var(--ease);
 }
 
+/* --- SKILLS & EDUCATION LAYOUT --- */
+.skills-education-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* --- TIMELINE STYLE (KIRI) --- */
+.timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 3.5rem;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -3.15rem;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.edu-category {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--primary);
+    font-weight: 800;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.timeline-content h4 {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 5px;
+}
+
+.edu-degree {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.edu-project {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: var(--primary);
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.edu-year {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.edu-desc-list {
+    margin-top: 12px;
+    padding-left: 18px;
+    list-style-type: circle;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.edu-desc-list li { margin-bottom: 6px; }
+.edu-desc-short { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; margin-top: 10px; }
+
+/* --- SKILLS CARD STYLE (KANAN) --- */
+.skills-intro-text {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+}
+
+.mini-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.skill-card-small {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 20px; /* Lebih bulat agar cantik */
+    border: 1px solid var(--border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-card-small:hover {
+    border-color: var(--primary);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 242, 255, 0.1);
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.skill-header i { 
+    color: var(--primary); 
+    font-size: 1.3rem; 
+}
+
+.skill-header h5 { 
+    font-family: var(--font-head); 
+    font-size: 1.1rem; 
+    margin: 0; 
+}
+
+.skill-card-small p { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+    margin: 0; 
+    line-height: 1.5; 
+}
+
+/* --- KURSOR FIX: PINK UNTUK GELAP, HITAM UNTUK TERANG --- */
+
+/* 1. TEMA GELAP (DEFAULT) - KAKI KUCING PINK */
+html, body {
+    /* Kita pakai gambar telapak kaki buatan (SVG) warna Pink Hotpink */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23FF69B4' d='M8.5 5c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m7 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2M5 10c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m14 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m-7 3c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5s-4.5-2-4.5-4.5s2-4.5 4.5-4.5Z'/></svg>") 16 16, auto !important;
+}
+
+/* Hover di Tema Gelap - Tetap Pink */
+a:hover, button:hover, .btn:hover, .project-img:hover, .theme-toggle:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23FF69B4' d='M8.5 5c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m7 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2M5 10c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m14 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m-7 3c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5s-4.5-2-4.5-4.5s2-4.5 4.5-4.5Z'/></svg>") 16 16, pointer !important;
+}
+
+/* 2. TEMA TERANG (LIGHT MODE) - KAKI KUCING HITAM */
+body[data-theme="light"], body.light-mode {
+    /* Path fill %23000000 adalah kode untuk warna Hitam */
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23000000' d='M8.5 5c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m7 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2M5 10c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m14 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m-7 3c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5s-4.5-2-4.5-4.5s2-4.5 4.5-4.5Z'/></svg>") 16 16, auto !important;
+}
+
+/* Hover di Tema Terang - Tetap Hitam */
+body[data-theme="light"] a:hover, body.light-mode a:hover,
+body[data-theme="light"] button:hover, body.light-mode button:hover,
+body[data-theme="light"] .btn:hover, body.light-mode .btn:hover {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'><path fill='%23000000' d='M8.5 5c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m7 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2M5 10c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m14 0c1.1 0 2 .9 2 2s-.9 2-2 2s-2-.9-2-2s.9-2 2-2m-7 3c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5s-4.5-2-4.5-4.5s2-4.5 4.5-4.5Z'/></svg>") 16 16, pointer !important;
+}
 /* Responsiveness */
 
 @media (max-width:968px) {
@@ -719,6 +935,20 @@ html {
     margin-top: 2rem;
     padding-bottom: 2rem;
 }
+
+.skills-education-grid { 
+        grid-template-columns: 1fr; 
+        gap: 3.5rem; 
+    }
+    .mini-skills-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .timeline { 
+        padding-left: 2rem; 
+    }
+    .timeline-dot { 
+        left: -2.65rem; 
+    }
 }
 
 @media (max-width:576px) {

@@ -23,7 +23,7 @@
             <a href="#portfolio" class="nav-link">Portfolio</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#contact" class="nav-link">Contact</a>
-            <a href="Abu Klasik Profesional CV Admin Sosial Media Resume.pdf" class="nav-link" download>Resume</a>
+            <a href="CV Rahmannia Dwi.pdf" class="nav-link" download>Resume</a>
         </div>
         <div style="display: flex; gap: 1.5rem; align-items: center;">
             <div id="theme-toggle" class="theme-toggle">
@@ -47,7 +47,7 @@
     <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
     <a href="#skills" class="mobile-nav-link">Skills</a>
     <a href="#contact" class="mobile-nav-link">Contact</a>
-    <a href="Abu Klasik Profesional CV Admin Sosial Media Resume.pdf" class="mobile-nav-link" download>Resume</a>
+    <a href="CV Rahmannia Dwi.pdf" class="mobile-nav-link" download>Resume</a>
     </div>
     <!-- Navigation Bar Selesai -->
 
@@ -88,65 +88,148 @@
         </div>
     </section>
     <section class="section" id="portfolio">
-    <div class="container">
-        <h2 class="section-title"><i class="fa-solid fa-water"></i> Selected Projects</h2>
-        <div class="portfolio-grid">
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="project1.jpg" alt="Flood Control" onclick="openFullImg(this.src)"> 
-                    <div class="img-overlay">Click to Enlarge</div>
-                </div>
-                <div class="project-info">
-                    <h3>DAS Grindulu Flood Control</h3>
-                    <p>Pemodelan hidrolika 2D menggunakan HEC-RAS untuk mitigasi banjir di Pacitan.</p>
+        <div class="container">
+            <h2 class="section-title"><i class="fa-solid fa-water"></i> Selected Projects</h2>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-img" onclick="openZoom(this.querySelector('img').src)">
+                        <img src="Portofolio 1.png" alt="Manhwa">
+                        <div class="img-overlay">Click to Enlarge</div>
+                    </div>
+                    <div class="project-info">
+                    <h3>Urban Drainage Design</h3>
+                    <p>Analisis hidrologi dan perhitungan dimensi saluran drainase perkotaan menggunakan integrasi data ArcGIS dan MS Excel.</p>
                     <div class="tag-group">
-                        <span class="tag">HEC-RAS</span>
-                        <span class="tag">ArcGIS</span>
+                     <span class="tag">MS Excel</span>
+                    <span class="tag">Hydrology Analysis</span>
+                    <span class="tag">ArcGIS</span>
+                    <span class="tag">Hec-Ras</span>
                     </div>
                 </div>
-            </div>
-            <div class="project-card">
-                <div class="project-img">
-                    <img src="project2.jpg" alt="Sheet Pile" onclick="openFullImg(this.src)">
-                    <div class="img-overlay">Click to Enlarge</div>
                 </div>
-                <div class="project-info">
-                    <h3>CCSP Construction</h3>
-                    <p>Pengawasan teknis pemasangan Corrugated Concrete Sheet Pile di proyek Semarang.</p>
-                    <div class="tag-group">
-                        <span class="tag">Civil Engineering</span>
-                        <span class="tag">Field Supervision</span>
+                <div class="project-card">
+                <div class="project-img">
+                <video width="100%" height="auto" autoplay muted loop playsinline style="display: block; border-radius: 15px 15px 0 0;">
+                  <source src="Bed Load Transport.mp4" type="video/mp4">
+                 Browser kamu tidak mendukung video.
+                </video>
+                </div>
+    <div class="project-info">
+        <h3>Sediment Transport Simulation</h3>
+        <p>Simulasi pemodelan angkutan sedimen dasar (bed load) menggunakan Delft3D untuk analisis morfologi sungai.</p>
+        <div class="tag-group">
+            <span class="tag">Delft3D</span>
+            <span class="tag">Hydraulic Modeling</span>
+            <span class="tag">Sediment</span>
+        </div>
+    </div>
+</div>
+                <div class="project-card">
+                    <div class="project-img" onclick="openZoom(this.querySelector('img').src)">
+                        <img src="Portofolio.png" alt="Manhwa">
+                        <div class="img-overlay">Click to Enlarge</div>
                     </div>
+                    <div class="project-info">
+                    <h3>Digital Image Restoration</h3>
+                    <p>Teknik redrawing dan cleaning pada panel komik digital untuk restorasi visual menggunakan Adobe Photoshop.</p>
+                    <div class="tag-group">
+                    <span class="tag">Adobe Photoshop</span>
+                    <span class="tag">Digital Imaging</span>
+                    <span class="tag">Creative Art</span>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-<div id="imgModal" class="modal" onclick="this.style.display='none'">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="fullImg">
-</div>
+    </section>
 
 <section class="section" id="skills">
     <div class="container">
-        <h2 class="section-title"><i class="fa-solid fa-gears"></i> Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fa-solid fa-droplet"></i></div>
-                <h4>Water Engineering</h4>
-                <p>Hydraulic modeling & Flood mapping</p>
+        <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience & Skills</h2>
+        
+        <div class="skills-education-grid">
+            
+            <div class="education-column">
+                <div class="timeline">
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="edu-category">Working Experience</span>
+                            <h4>PT PP (Persero) Tbk – APTA – ADP, KSO</h4>
+                            <p class="edu-degree">Quality Control Intern</p>
+                            <p class="edu-project">Project: Flood Control System Tenggang-Sringin (Owner: BBWS Pemali Juana)</p>
+                            <p class="edu-year">Juli 2025 - Nov 2025</p>
+                            <ul class="edu-desc-list">
+                                <li>Bertanggung jawab dalam <strong>Digital Document Management</strong> dan pengarsipan data mutu proyek.</li>
+                                <li>Mengelola validasi tanda tangan dokumen teknis (QC) dan sistem pengarsipan digital via Google Drive.</li>
+                                <li>Memastikan integritas data laporan berkala untuk keperluan koordinasi antara kontraktor dan owner (BBWS).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="edu-category">Education</span>
+                            <h4>Institut Teknologi Sepuluh Nopember (ITS)</h4>
+                            <p class="edu-degree">D4 Teknologi Rekayasa Konstruksi Bangunan Air</p>
+                            <p class="edu-year">2022 - Sekarang</p>
+                            <p class="edu-desc-short">Fokus pada perencanaan infrastruktur keairan, hidrologi, dan pemodelan bangunan air presisi.</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-                <h4>Engineering Tools</h4>
-                <p>AutoCAD, HEC-RAS, ArcGIS, Global Mapper</p>
+
+            <div class="skills-column">
+                <p class="skills-intro-text">
+                    Kombinasi keahlian administrasi teknis dengan penguasaan software hidrodinamika dan desain:
+                </p>
+                
+                <div class="mini-skills-grid">
+                    <div class="skill-card-small">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <h5>ArcGIS</h5>
+                        </div>
+                        <p>Analisis spasial, bathymetry processing, dan pemetaan DAS.</p>
+                    </div>
+
+                    <div class="skill-card-small">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                            <h5>AutoCAD</h5>
+                        </div>
+                        <p>Drafting teknis bangunan air dan perancangan struktur.</p>
+                    </div>
+
+                    <div class="skill-card-small">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-water"></i>
+                            <h5>Delft3D</h5>
+                        </div>
+                        <p>Pemodelan hidrodinamika dan morfologi sungai/pantai.</p>
+                    </div>
+
+                     <div class="skill-card-small">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-palette"></i>
+                            <h5>Microsoft Office (Word, Excel, PowerPoint)</h5>
+                        </div>
+                        <p>Mahir dalam pengolahan data teknis, perhitungan hidrologi menggunakan Excel, serta penyusunan laporan teknis dan presentasi proyek yang sistematis.</p>
+                    </div>
+
+                    <div class="skill-card-small">
+                        <div class="skill-header">
+                            <i class="fa-solid fa-palette"></i>
+                            <h5>Adobe Photoshop</h5>
+                        </div>
+                        <p>Mahir dalam Digital Image Cleaning, Redrawing, dan manipulasi visual untuk kebutuhan kreatif maupun teknis.</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-card">
-                <div class="skill-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                <h4>Web Dev</h4>
-                <p>HTML, CSS (Aesthetic Portfolio)</p>
-            </div>
+
         </div>
     </div>
 </section>
@@ -159,15 +242,15 @@
             <h2 class="section-title">Let's Connect</h2>
             <p class="contact-subtitle">Tertarik untuk berdiskusi tentang konstruksi keairan atau sekadar menyapa?</p>
             <div class="social-links-grid">
-                <a href="mailto:emailmu@example.com" class="social-box">
+                <a href="mailto:rahmanniadwi433@gmail.com" class="social-box">
                     <i class="fa-solid fa-envelope"></i>
                     <span>Email Me</span>
                 </a>
-                <a href="https://linkedin.com/in/rahma" class="social-box">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <span>LinkedIn</span>
+                <a href="https://wa.me/6282233061700" class="social-box" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                 <span>WhatsApp</span>
                 </a>
-                <a href="https://instagram.com/rahma" class="social-box">
+                <a href="https://www.instagram.com/rhmnn_dwi/" class="social-box">
                     <i class="fa-brands fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
@@ -175,49 +258,47 @@
         </div>
     </div>
 </section>
-
+<div id="modalBox" class="modal-zoom" onclick="this.style.display='none'">
+        <span class="close-zoom">&times;</span>
+        <img id="imgTarget" class="modal-zoom-content">
+    </div>
     <script>
+// 1. Fungsi Buka Gambar
+function openZoom(sumber) {
+            document.getElementById('modalBox').style.display = 'flex';
+            document.getElementById('imgTarget').src = sumber;
+        }
+
+// 2. KODE MENU HP & THEME (JANGAN DIHAPUS)
+document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+    const menuBtn = document.querySelector('.mobile-menu-btn');
+    const mobileLinks = document.querySelector('.mobile-nav-links');
+    const closeBtn = document.querySelector('.mobile-nav-close');
+    const overlay = document.querySelector('.mobile-nav-overlay');
 
-    themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode'); // Cara alternatif yang lebih rapi
-    
-    if (body.getAttribute('data-theme') === 'light') {
-        body.removeAttribute('data-theme');
-    } else {
-        body.setAttribute('data-theme', 'light');
+    if (themeToggle) {
+        themeToggle.onclick = function() {
+            document.body.classList.toggle('light-mode');
+            let theme = document.body.getAttribute('data-theme');
+            if (theme === 'light') document.body.removeAttribute('data-theme');
+            else document.body.setAttribute('data-theme', 'light');
+        };
     }
-    
-    // Animasi putar dikit saat diklik
-    themeToggle.style.transform = 'scale(1.2) rotate(15deg)';
-    setTimeout(() => {
-        themeToggle.style.transform = 'scale(1) rotate(0deg)';
-    }, 200);
-});
-const menuBtn = document.querySelector('.mobile-menu-btn');
-const mobileLinks = document.querySelector('.mobile-nav-links');
-const closeBtn = document.querySelector('.mobile-nav-close');
-const overlay = document.querySelector('.mobile-nav-overlay');
 
-// Buka Menu
-menuBtn.addEventListener('click', () => {
-    mobileLinks.classList.add('active');
-    overlay.classList.add('active');
-});
+    if (menuBtn) {
+        menuBtn.onclick = function() {
+            mobileLinks.classList.add('active');
+            overlay.classList.add('active');
+        };
+    }
 
-// Tutup Menu
-const closeMenu = () => {
-    mobileLinks.classList.remove('active');
-    overlay.classList.remove('active');
-};
-
-closeBtn.addEventListener('click', closeMenu);
-overlay.addEventListener('click', closeMenu);
-
-// Tutup menu kalau link-nya diklik
-document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            mobileLinks.classList.remove('active');
+            overlay.classList.remove('active');
+        };
+    }
 });
 </script>
   </body> 
